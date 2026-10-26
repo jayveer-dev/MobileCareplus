@@ -1,0 +1,40 @@
+{
+  "name": "mobile-care-plus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Manage iPhone and Android phones from your computer: backups, photos, apps, and moving to a new phone.",
+  "license": "GPL-3.0-or-later",
+  "author": "Jayveer Singh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayveer-dev/MobileCareplus.git"
+  },
+  "homepage": "https://github.com/jayveer-dev/MobileCareplus",
+  "bugs": "https://github.com/jayveer-dev/MobileCareplus/issues",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test src/**/*.test.ts",
+    "postinstall": "node node_modules/electron/install.js",
+    "package:win": "electron-vite build && electron-builder --win --x64",
+    "package:mac": "electron-vite build && electron-builder --mac --arm64"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

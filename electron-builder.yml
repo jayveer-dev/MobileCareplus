@@ -1,0 +1,43 @@
+# Installers: Windows (NSIS, x64) and macOS (DMG and ZIP, Apple Silicon). Each platform ships its
+# own helper tools in resources/bin/<platform>, where src/main/tools.ts looks for them.
+appId: com.jayveerdev.mobilecareplus
+productName: Mobile Care Plus
+copyright: Copyright © 2026 Jayveer Singh
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+extraResources:
+  - from: THIRD-PARTY-NOTICES.txt
+    to: THIRD-PARTY-NOTICES.txt
+
+win:
+  extraResources:
+    - from: resources/bin/win32
+      to: resources/bin/win32
+  target:
+    - target: nsis
+      arch: [x64]
+  # Not code-signed yet; the .exe still gets its icon and version details.
+  signExecutable: false
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  artifactName: Mobile-Care-Plus-Setup-${version}.${ext}
+
+mac:
+  extraResources:
+    - from: resources/bin/darwin
+      to: resources/bin/darwin
+  target:
+    - target: dmg
+      arch: [arm64]
+    - target: zip
+      arch: [arm64]
+  category: public.app-category.utilities
+  # No Apple Developer ID yet: ad-hoc signed (Apple Silicon requires a signature), not notarized.
+  identity: "-"
+  hardenedRuntime: false
+  artifactName: Mobile-Care-Plus-${version}-mac-${arch}.${ext}

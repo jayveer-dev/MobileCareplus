@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+.DS_Store
+# Helper tools are built locally (scripts/build-native.sh, native/win/build.sh); never committed.
+resources/bin/
+# Installers are attached to GitHub Releases, never committed (GitHub limits files to 100 MB).
+*.exe
+*.dmg
+*.blockmap

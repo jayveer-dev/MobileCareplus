@@ -1,0 +1,33 @@
+/* config.h for building libimobiledevice 1.4.0 (and Mobile Care Plus's tools on it) for Windows with zig/mingw-w64. */
+#define PACKAGE "libimobiledevice"
+#define PACKAGE_NAME "libimobiledevice"
+#define PACKAGE_VERSION "1.4.0"
+#define PACKAGE_STRING "libimobiledevice 1.4.0"
+#define PACKAGE_TARNAME "libimobiledevice"
+#define PACKAGE_URL "https://libimobiledevice.org"
+#define PACKAGE_BUGREPORT "https://github.com/libimobiledevice/libimobiledevice/issues"
+#define VERSION "1.4.0"
+#define HAVE_OPENSSL 1
+#define HAVE_STDINT_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDIO_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_TIME_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_GETTIMEOFDAY 1
+#define HAVE_STRDUP 1
+#define HAVE_STRERROR 1
+#define HAVE_STRCASECMP 1
+#define HAVE_PLIST_JSON 1
+#define HAVE_PLIST_UNIX_DATE 1
+#define STDC_HEADERS 1
+#define WINVER 0x0601
+#define __LITTLE_ENDIAN 1234
+#define __BIG_ENDIAN 4321
+#define __BYTE_ORDER __LITTLE_ENDIAN
+#define HAVE_ASPRINTF 1
+#define HAVE_VASPRINTF 1

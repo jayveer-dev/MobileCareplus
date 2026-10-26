@@ -1,0 +1,77 @@
+/* Mobile Care Plus Transfer: layout on top of the shared tokens in the main app's styles.css. */
+.tx { min-height: 100vh; display: flex; flex-direction: column; }
+.tx-top { display: flex; align-items: center; gap: 16px; padding: 14px 28px; background: var(--surface); border-bottom: 1px solid var(--line); }
+.tx-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; }
+.tx-brand .brand-mark { width: 28px; height: 28px; }
+.tx-phones { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; }
+.tx-phones li { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+.tx-main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 48px 32px; }
+.tx-title { font-size: 30px; line-height: 1.15; letter-spacing: -0.025em; }
+.tx-lede { max-width: 62ch; margin: 10px 0 34px; font-size: 15px; }
+.tx-apps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+.tx-app { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 30px 14px 24px; border-radius: 18px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); font-weight: 600; box-shadow: 0 10px 28px -20px rgb(15 25 40 / 0.45); transition: translate 120ms, box-shadow 120ms; }
+.tx-app:hover { translate: 0 -2px; box-shadow: 0 16px 32px -20px rgb(15 25 40 / 0.5); }
+.tx-badge { display: grid; place-items: center; border-radius: 50%; color: #fff; font-weight: 800; letter-spacing: -0.02em; text-transform: none; }
+.tx-app-name { text-align: center; }
+.tx-back { display: inline-flex; align-items: center; gap: 6px; margin: -16px 0 18px -10px; color: var(--muted); }
+.tx-back-icon { display: grid; rotate: 180deg; }
+.tx-app-head { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+.tx-app-head p { margin: 4px 0 0; }
+.tx-actions { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.tx-actions li { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--surface); }
+.tx-action-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .tx-app { transition: none; } }
+.tx-app .muted.small { margin-top: -10px; font-weight: 500; }
+.tx-data { display: flex; align-items: center; gap: 16px; padding: 18px 20px; margin-bottom: 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.tx-data-text { flex: 1; min-width: 0; }
+.tx-data-text p { margin: 0; }
+.tx-data-text p + p { margin-top: 6px; }
+.tx-actions li[aria-disabled="true"] .quick-icon { background: var(--sunken); color: var(--muted); }
+.tx-saved-title { margin-top: 30px; }
+.tx-saved { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+
+/* Transfer between phones */
+.xfer-mode { display: flex; width: fit-content; margin: 0 auto; }
+.xfer-mode button { padding: 8px 26px; }
+.xfer-explain { text-align: center; margin: 10px auto 20px; max-width: 60ch; }
+.xfer-phones { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+.xfer-card { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 14px 20px 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 10px 28px -20px rgb(15 25 40 / 0.45); }
+.xfer-pick { align-self: stretch; display: flex; align-items: center; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.xfer-pick select { flex: 1; min-width: 0; font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 4px 2px; cursor: pointer; }
+.xfer-phone { width: 104px; aspect-ratio: 9 / 18.5; padding: 7px; border-radius: 28px; background: var(--surface); box-shadow: inset 0 0 0 2px var(--line), 0 18px 34px -20px rgb(15 25 40 / 0.5); }
+.xfer-phone.android { border-radius: 20px; }
+.xfer-screen { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; height: 100%; border-radius: 22px; color: #fff; font-weight: 700; text-align: center; padding: 10px; }
+.xfer-phone.android .xfer-screen { border-radius: 14px; background: linear-gradient(160deg, #6fd39b, #2e9e63); }
+.xfer-phone.ios .xfer-screen { background: linear-gradient(160deg, #5fd6c9, #4a90e8); }
+.xfer-phone.empty .xfer-screen { background: var(--sunken); color: var(--muted); font-weight: 500; font-size: 13px; }
+.xfer-phone.ios .xfer-screen::before { content: ""; position: absolute; top: 8px; width: 34%; height: 12px; border-radius: 7px; background: #111; }
+.xfer-phone.android .xfer-screen::before { content: ""; position: absolute; top: 9px; width: 9px; height: 9px; border-radius: 50%; background: #111; }
+.xfer-kind { font-size: 18px; letter-spacing: -0.01em; }
+.xfer-state { font-size: 12px; font-weight: 500; background: rgb(0 0 0 / 0.25); padding: 2px 8px; border-radius: 999px; }
+button.xfer-swap { width: 52px; height: 52px; padding: 0; display: grid; place-items: center; border-radius: 50%; background: var(--surface); color: var(--accent); border: 1px solid var(--line); }
+.xfer-foot { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 20px; }
+button.xfer-go { min-width: 220px; padding: 11px 24px; border-radius: 999px; font-size: 15px; }
+.xfer-checks { width: min(560px, 92vw); }
+.xfer-checks ul { list-style: none; margin: 12px 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.xfer-checks li { display: flex; gap: 10px; align-items: baseline; }
+.xfer-mark { flex: none; width: 18px; text-align: center; font-weight: 700; }
+.xfer-checks li.good .xfer-mark { color: var(--ok); }
+.xfer-checks li.bad { color: var(--bad); }
+.xfer-checks li.you .xfer-mark { color: var(--muted); }
+.xfer-checks h4 { margin: 14px 0 4px; font-size: 14px; }
+.xfer-checks ul.plain { margin: 0; gap: 4px; padding-left: 18px; list-style: disc; }
+.xfer-checks ul.plain li { display: list-item; }
+@media (max-width: 760px) { .xfer-phones { grid-template-columns: 1fr; } button.xfer-swap { justify-self: center; rotate: 90deg; } }
+.tx-phone-pick { margin: -8px 0 18px; }
+.xfer-help { text-align: center; margin: 14px 0 0; }
+
+/* Move to a new phone */
+.sw-card { display: flex; align-items: center; gap: 20px; padding: 24px 26px; margin-bottom: 36px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 10px 28px -18px rgb(15 25 40 / 0.4); }
+.sw-icon { flex: none; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; color: #fff; background: linear-gradient(140deg, #4a90e8, #2e58c8); }
+.sw-text { flex: 1; min-width: 0; }
+.sw-text p { margin: 6px 0 0; max-width: 62ch; }
+.sw-card > button { white-space: nowrap; }
+.sw-apps-title { font-size: 22px; }
+.sw-title { text-align: center; }
+.sw-list { margin-top: 30px; }
+.sw-list .toggle input { width: 18px; height: 18px; }

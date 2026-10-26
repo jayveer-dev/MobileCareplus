@@ -1,0 +1,58 @@
+name: Bug report
+description: Something doesn't work, or works differently than expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! Please hide personal details (names, numbers, photos, chats) in anything you attach.
+  - type: input
+    id: version
+    attributes:
+      label: Mobile Care Plus version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: computer
+    attributes:
+      label: Computer
+      placeholder: "Windows 11 / macOS 15"
+    validations:
+      required: true
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model and system version
+      placeholder: "iPhone 15, iOS 18.2 / Samsung Galaxy S24, Android 15"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Connecting the phone
+        - Home
+        - Photos & videos
+        - Apps
+        - Contacts or Messages
+        - Backup & Restore
+        - Move to a new phone
+        - Chat transfer (WhatsApp and others)
+        - Toolbox
+        - Installing
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. Include any message the app showed.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (optional)
+      description: Hide anything personal first.

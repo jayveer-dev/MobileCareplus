@@ -1,0 +1,26 @@
+Mobile Care Plus includes the following third-party software, each under its own license.
+
+libimobiledevice 1.3.0, libplist 2.7.0, libusbmuxd 2.1.1, libimobiledevice-glue 1.3.2,
+ideviceinstaller 1.1.1
+  License: GNU Lesser General Public License v2.1 (tools under LGPL-2.1 / GPL-2.0 as stated
+  in each project). Source: https://github.com/libimobiledevice
+  Windows builds from the MSYS2 project: https://packages.msys2.org
+
+OpenSSL 3, GnuTLS, libzip, zlib, bzip2, xz, zstd, brotli, nettle, gmp, libidn2, libunistring,
+libtasn1, p11-kit, libffi, libiconv, gettext runtime, and the GCC/MinGW runtime libraries
+  Each under its own open-source license; see the MSYS2 package pages for license texts and
+  sources: https://packages.msys2.org
+
+Android Debug Bridge (adb), from Android SDK Platform-Tools
+  License: Apache License 2.0. Source: https://android.googlesource.com/platform/packages/modules/adb
+
+Electron (MIT) and Chromium (BSD-style and others), React (MIT)
+  See LICENSE.electron.txt and LICENSES.chromium.html next to the application.
+
+
+afcclient, ddbackup and ddicons (Windows builds)
+  Compiled from libimobiledevice 1.4.0 (LGPL-2.1, https://github.com/libimobiledevice/libimobiledevice)
+  with Mobile Care Plus's changes in ddbackup. Sources: native/ in this repository.
+
+The source of every LGPL component, including Mobile Care Plus's modified libimobiledevice tool
+(ddbackup), is in native/ in this repository.
